@@ -1,0 +1,26 @@
+<div class="h-16 bg-gradient-to-tr from-cyan-700 to-sky-800 w-full flex justify-between items-center p-5 shadow">
+  <span class="text-white text-2xl font-bold leading-3">{{ title }}</span>
+  <ul class="flex space-x-5 text-white">
+    <li>
+      <a
+        routerLinkActive="font-semibold text-lime-400"
+        [routerLink]="'/home'">
+          Home
+      </a>
+    </li>
+    <li>
+      <a
+        routerLinkActive="font-semibold text-lime-400"
+        [routerLink]="'/products'">
+          Products
+      </a>
+    </li>
+    <li>
+      <a
+        routerLinkActive="font-semibold text-lime-400"
+        [routerLink]="'/contact'">
+        Contact
+      </a>
+    </li>
+  </ul>
+</div>

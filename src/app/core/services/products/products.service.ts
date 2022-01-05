@@ -1,15 +1,10 @@
-import { Component } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { Product } from '../../../product.model';
 
-import { Product } from './product.model';
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+@Injectable({
+  providedIn: 'root'
 })
-export class AppComponent {
-  title = 'Platzi Store';
-
+export class ProductsService {
   products: Product[] = [
     {
       id: '1',
@@ -54,9 +49,13 @@ export class AppComponent {
       description: 'bla bla bla bla bla'
     }
   ];
+  constructor() { }
 
-  logDetails(prooduct: Product) {
-    console.log(prooduct);
+  getAllProducts() {
+    return this.products;
   }
 
+  getProduct(id: string) {
+    return this.products.find((p) => p.id === id);
+  }
 }

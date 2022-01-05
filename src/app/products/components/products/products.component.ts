@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-
-import { Product } from './product.model';
+import { Product } from '../../../product.model';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-products',
+  templateUrl: './products.component.html',
+  styleUrls: ['./products.component.scss']
 })
-export class AppComponent {
-  title = 'Platzi Store';
+export class ProductsComponent {
+
+  constructor() { }
 
   products: Product[] = [
     {
