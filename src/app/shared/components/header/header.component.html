@@ -1,6 +1,6 @@
-<div class="h-16 bg-gradient-to-tr from-cyan-700 to-sky-800 w-full flex justify-between items-center p-5 shadow">
+<div class="h-16 bg-gradient-to-tr from-cyan-700 to-sky-800 w-full flex justify-between items-center p-10 shadow">
   <span class="text-white text-2xl font-bold leading-3">{{ title }}</span>
-  <ul class="flex space-x-5 text-white">
+  <ul class="flex space-x-8 text-white">
     <li>
       <a
         routerLinkActive="font-semibold text-lime-400"
@@ -23,4 +23,10 @@
       </a>
     </li>
   </ul>
+  <div class="relative">
+    <div class="absolute text-white font-semibold flex justify-center items-center right-0 top-0 bg-lime-500 rounded-full text-sm w-5 h-5 translate-x-1/2 -translate-y-1/2">
+      3
+    </div>
+    <fa-icon class="text-white text-2xl" [icon]="faShoppingCart"></fa-icon>
+  </div>
 </div>

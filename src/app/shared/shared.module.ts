@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -21,6 +24,8 @@ import { ExponentialPipe } from './pipes/exponential/exponential.pipe';
   imports: [
     CommonModule,
     RouterModule,
+    FontAwesomeModule,
+    ReactiveFormsModule,
   ],
   exports: [
     FooterComponent,

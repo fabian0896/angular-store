@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-footer',
@@ -6,6 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
+  contactInput: FormControl;
 
-  constructor() { }
+  constructor() {
+    this.contactInput = new FormControl('',
+      [
+        Validators.required,
+        Validators.email,
+      ]
+    );
+  }
+
+  submit() {
+    console.log('sbmit', this.contactInput)
+  }
 }

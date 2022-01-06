@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Product } from '../../../product.model';
 
 import { ProductsService } from '../../../core/services/products/products.service';
+import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'app-product-details',
@@ -18,11 +19,17 @@ export class ProductDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params: Params) => {
-      const id: string = params['id'];
-      const product = this.productsService.getProduct(id);
-      this.product = product;
+    this.route.params.subscribe(params => {
+      const id = params['id'];
+      this.fetchProduct(id);
     });
+  }
+
+  fetchProduct(id: string) {
+    this.productsService.getProduct(id)
+      .subscribe(product => {
+        this.product = product;
+      })
   }
 
 }
