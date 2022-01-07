@@ -1,0 +1,32 @@
+<div class="fixed top-0 left-0 w-full h-screen bg-black/30 grid place-content-center">
+  <div class="w-80 h-96 bg-white rounded py-10 px-5">
+    <h2 class="text-2xl font-semibold text-gray-800 text-center">Ingresa</h2>
+    <hr class="my-5">
+    <form [formGroup]="loginForm" class="space-y-5" (ngSubmit)="login()">
+      <div>
+        <label class="text-gray-800 font-semibold block mb-2 text-sm" for="email-modal">Correo electronico</label>
+        <input
+          formControlName="email"
+          class="w-full py-2 px-3 border-2 border-lime-500 rounded outline-none"
+          type="email"
+          id="email-modal">
+      </div>
+      <div>
+        <label class="text-gray-800 font-semibold block mb-2 text-sm" for="password-modal">Contraseña</label>
+        <input
+          formControlName="password"
+          class="w-full py-2 px-3 border-2 border-lime-500 rounded outline-none"
+          type="password"
+          id="password-modal">
+      </div>
+      <div>
+        <button
+          [disabled]="loginForm.invalid"
+          type="submit"
+          class="bg-lime-500 px-4 py-2 text-white font-medium rounded shadow-lg shadow-lime-500/30 w-full hover:bg-lime-700 transition disabled:opacity-30">
+          Ingresar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

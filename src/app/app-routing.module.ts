@@ -4,7 +4,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { LayoutComponent } from './layout/layout.component';
 
 import { AngularFireAuthGuard } from '@angular/fire/compat/auth-guard';
-import { AdminGuard } from './admin.guard';
 
 const routes: Routes = [
   {
@@ -31,10 +30,13 @@ const routes: Routes = [
       },
       {
         path: 'contact',
-        canActivate: [AdminGuard],
         loadChildren: () => import('./contact/contac.module').then(m => m.ContactModule),
       }
     ],
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
   },
   {
     path: '**',

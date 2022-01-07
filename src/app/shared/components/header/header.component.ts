@@ -14,7 +14,7 @@ export class HeaderComponent {
   cartSize$: Observable<number>;
 
   constructor(
-    private cartService: CartService
+    private cartService: CartService,
   ) {
     this.cartSize$ = this.cartService.cart$.pipe(
       map(cart => cart.length)
