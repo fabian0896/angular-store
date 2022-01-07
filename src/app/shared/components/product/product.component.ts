@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
+import { CartService } from 'src/app/core/services/cart.service';
 import { Product } from '../../../product.model';
 
 @Component({
@@ -9,15 +10,14 @@ import { Product } from '../../../product.model';
 })
 export class ProductComponent {
   @Input() product: Product | undefined;
-  @Output() details: EventEmitter<Product> = new EventEmitter();
 
   constructor(
-    private route: Router
+    private cartService: CartService,
   ) { }
 
-  handleDetails() {
-    this.details.emit(this.product);
-    this.route.navigate(['products', this.product?.id]);
+  addToCart() {
+    if (!this.product) return;
+    this.cartService.addCart(this.product);
   }
 
 }

@@ -1,0 +1,32 @@
+<div *ngIf="(products$ | async) as products" class="max-w-4xl m-5 mx-auto">
+  <div class="p-5 space-y-5">
+    <h2 class="text.gray-800 font-semibold text-2xl">Productos:</h2>
+    <div
+      class="flex gap-4 items-center"
+      *ngFor="let product of products">
+      <figure class="w-14 overflow-hidden aspect-square rounded bg-gray-300 shadow-sm">
+        <img
+          class="object-contain w-full h-full"
+          [src]="product.image"
+          [alt]="product.title">
+      </figure>
+      <div class="flex-1">
+        <h3 class="text-xl font-medium text-gray-800">{{ product.title }}</h3>
+        <h6 class="text-gray-700">{{ product.price | currency }}</h6>
+      </div>
+      <button>
+        <fa-icon
+          class="text-gray-500 transition hover:text-red-600"
+          [icon]="timeIcon">
+        </fa-icon>
+      </button>
+    </div>
+  </div>
+  <hr>
+  <div class="p-5">
+    <h3 class="text-gray-800 font-semibold text">Total:</h3>
+    <h6 class="text-gray-700 text-xl">
+      {{ products | totalValue | currency }}
+    </h6>
+  </div>
+</div>

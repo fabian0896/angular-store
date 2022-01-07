@@ -23,10 +23,10 @@
       </a>
     </li>
   </ul>
-  <div class="relative">
+  <a routerLink="/order" class="relative">
     <div class="absolute text-white font-semibold flex justify-center items-center right-0 top-0 bg-lime-500 rounded-full text-sm w-5 h-5 translate-x-1/2 -translate-y-1/2">
-      3
+      {{ cartSize$ | async }}
     </div>
     <fa-icon class="text-white text-2xl" [icon]="faShoppingCart"></fa-icon>
-  </div>
+  </a>
 </div>

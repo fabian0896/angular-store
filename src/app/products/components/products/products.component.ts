@@ -17,8 +17,4 @@ export class ProductsComponent implements OnInit {
       this.products = this.productsService.getAllProducts();
   }
 
-  logDetails(prooduct: Product) {
-    console.log(prooduct);
-  }
-
 }

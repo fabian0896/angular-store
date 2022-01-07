@@ -1,7 +1,6 @@
 <div *ngIf="products" class="product-grid m-5 mx-auto max-w-5xl p-5">
   <app-product
     *ngFor="let product of products | async"
-    [product]="product"
-    (details)="logDetails($event)">
+    [product]="product">
   </app-product>
 </div>

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { map, Observable } from 'rxjs';
+import { CartService } from 'src/app/core/services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -9,6 +11,13 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 export class HeaderComponent {
   title = 'Platzi Store'
   faShoppingCart = faShoppingCart;
-  constructor() { }
+  cartSize$: Observable<number>;
 
+  constructor(
+    private cartService: CartService
+  ) {
+    this.cartSize$ = this.cartService.cart$.pipe(
+      map(cart => cart.length)
+    );
+  }
 }

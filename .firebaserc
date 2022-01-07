@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-store-459b4": {
+      "hosting": {
+        "platzi-store-angular": [
+          "angular-store-459b4"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-store-459b4"
+  }
+}

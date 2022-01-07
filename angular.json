@@ -114,6 +114,16 @@
               "src/**/*.html"
             ]
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "platzi-store-angular:build:production",
+            "firebaseProject": "angular-store-459b4",
+            "firebaseHostingSite": "angular-store-459b4"
+          }
         }
       }
     }

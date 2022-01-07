@@ -3,6 +3,7 @@ import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LayoutComponent } from './layout/layout.component';
 
+import { AngularFireAuthGuard } from '@angular/fire/compat/auth-guard';
 import { AdminGuard } from './admin.guard';
 
 const routes: Routes = [
@@ -22,6 +23,11 @@ const routes: Routes = [
       {
         path: 'products',
         loadChildren: () => import('./products/products.module').then(m => m.ProductsModule),
+      },
+      {
+        path: 'order',
+        canActivate: [AngularFireAuthGuard],
+        loadChildren: () => import('./order/order.module').then(m => m.OrderModule),
       },
       {
         path: 'contact',
